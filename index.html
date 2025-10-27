@@ -1,24 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xoraria Redirects</title>
+  <title>Xoraria</title>
   <script>
     const path = window.location.pathname.toLowerCase();
 
-    if (path === '/discord') {
-      window.location.href = 'https://discord.gg/ZRqqBHv2z5';
-    } else if (path === '/rbx') {
-      window.location.href = 'https://www.roblox.com/games/88784891256243/BETA-Xoraria';
-    } else if (path === '/error') {
-      document.write('<style>body{margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh;}</style><img src="404.jpg" style="max-width:100%;max-height:100%;">');
-    } else {
-      window.location.href = '/error';
+    switch (path) {
+      case '/discord':
+        window.location.replace('https://discord.gg/ZRqqBHv2z5');
+        break;
+      case '/rbx':
+        window.location.replace('https://www.roblox.com/games/88784891256243/BETA-Xoraria');
+        break;
+      case '/error':
+        document.write(`
+          <style>
+            body {
+              margin: 0;
+              height: 100vh;
+              background: #000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          </style>
+          <img src="404.jpg" alt="404 Error">
+        `);
+        break;
+      default:
+        window.location.replace('/error');
+        break;
     }
   </script>
 </head>
-<body>
-</body>
+<body></body>
 </html>
